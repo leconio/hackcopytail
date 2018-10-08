@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "copy hack",
+  "version": "1.0",
+  "description": "csdn",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://blog.csdn.net/*",
+        "*://www.jianshu.com/*"
+      ],
+      "all_frames": true,
+      "run_at":"document_start",
+      "js": [
+        "src/copy_hacker.js"
+      ]
+    },{
+      "matches": [
+        "*://blog.csdn.net/*"
+      ],
+      "all_frames": true,
+      "js": [
+        "src/click_hacker.js"
+      ]
+    }
+  ]
+}
