@@ -1,6 +1,5 @@
 function onCopy(e) {
     const data = window.getSelection().toString();
-    console.log(data);
     if (e.clipboardData) {
         e.clipboardData.setData("text/html", data);
         e.clipboardData.setData("text/plain", data);
