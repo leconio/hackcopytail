@@ -6,15 +6,15 @@
   "content_scripts": [
     {
       "matches": [
-        "*://blog.csdn.net/*",
-        "*://www.jianshu.com/*"
+        "*://*/*"
       ],
       "all_frames": true,
-      "run_at":"document_start",
+      "run_at": "document_start",
       "js": [
         "src/copy_hacker.js"
       ]
-    },{
+    },
+    {
       "matches": [
         "*://blog.csdn.net/*"
       ],
@@ -23,5 +23,10 @@
         "src/click_hacker.js"
       ]
     }
-  ]
+  ],
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "options_page": "src/manager.html"
 }

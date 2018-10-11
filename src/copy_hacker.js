@@ -1,4 +1,3 @@
-// on copy event, send a message to background.html
 function onCopy(e) {
     const data = window.getSelection().toString();
     console.log(data);
@@ -12,5 +11,17 @@ function onCopy(e) {
     e.preventDefault();
 }
 
-console.log("startup");
-document.addEventListener("copy", onCopy, false);
+
+
+chrome.storage.sync.get(['sites'], function (result) {
+    if (result) {
+        let url = window.location.href;
+        for (let siteUrl of result.sites) {
+            let regx = siteUrl.replace("*", "(.*)") + "(.*)";
+            if (new RegExp(regx).test(url)) {
+                console.log("startup");
+                document.addEventListener("copy", onCopy, false);
+            }
+        }
+    }
+});
