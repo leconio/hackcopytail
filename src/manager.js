@@ -19,7 +19,9 @@ document.getElementById("submitRules").onclick = () => {
 chrome.storage.sync.get(['sites'], function (result) {
     if (result) {
         let textRules = document.getElementById("rules");
-        textRules.value = result.sites.join("\n");
+        if (result.sites) {
+            textRules.value = result.sites.join("\n");
+        }
     }
 });
 
