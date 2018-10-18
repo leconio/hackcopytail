@@ -16,9 +16,7 @@ chrome.storage.sync.get(['sites'], function (result) {
     let rules = [];
     if (result.hasOwnProperty("sites")) {
         rules = result.sites;
-        console.log("sss");
     } else {
-        console.log("ddd");
         rules = ["https://www.jianshu.com",
             "https://blog.csdn.net",
             "http://www.360doc.com"];
