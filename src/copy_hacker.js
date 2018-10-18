@@ -1,5 +1,6 @@
 function onCopy(e) {
-    const data = window.getSelection().toString();
+    let data = window.getSelection().toString();
+    data = data.replace(/(\u00A0)/g, " ").replace(/(\u3000)/g, " ");
     if (e.clipboardData) {
         e.clipboardData.setData("text/html", data);
         e.clipboardData.setData("text/plain", data);
