@@ -1,6 +1,6 @@
 (function () {
     document.body.contentEditable='true';
-	document.designMode='on';
+    document.designMode='on';
 })();
 
 let more_btn = document.getElementById("btn-readmore");
