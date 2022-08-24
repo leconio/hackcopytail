@@ -6,6 +6,11 @@
   "icons": {
     "128": "128icon.png"
   },
+   "browser_action": {
+      "default_icon": "128icon.png",
+      "default_popup": "popup.html",
+      "default_title": "Hack Copy Tail"
+   },
   "content_scripts": [
     {
       "matches": [
@@ -22,6 +27,7 @@
         "*://blog.csdn.net/*"
       ],
       "all_frames": true,
+      "run_at": "document_idle",
       "js": [
         "src/click_hacker.js"
       ]
